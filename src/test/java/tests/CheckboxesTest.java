@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import pages.CheckboxesPage;
 
 @DisplayName("Страница Checkboxes")
-class CheckboxesTest extends CommonTest {
+class CheckboxesTest extends AbstractTest {
 
     @Test
     @DisplayName("Тест")

@@ -5,12 +5,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.DisappearingElementsPage;
 
-import java.util.stream.IntStream;
-
 import static com.codeborne.selenide.Selenide.refresh;
 
 @DisplayName("Страница Disappearing Elements")
-class DisappearingElementsTest extends CommonTest {
+class DisappearingElementsTest extends AbstractTest {
 
     @Test
     @DisplayName("Тест")

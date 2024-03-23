@@ -3,21 +3,19 @@ package tests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import pages.StatusCodePage;
 import pages.StatusCodesPage;
 
-import java.lang.reflect.Method;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static com.codeborne.selenide.Selenide.back;
 
 @DisplayName("Страница Status Codes")
-class StatusCodesTest extends CommonTest {
+class StatusCodesTest extends AbstractTest {
 
     private StatusCodesPage statusCodesPage;
 

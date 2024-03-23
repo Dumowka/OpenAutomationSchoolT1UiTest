@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import pages.DropdownPage;
 
 @DisplayName("Страница Dropdown")
-class DropdownTest extends CommonTest {
+class DropdownTest extends AbstractTest {
 
     @Test
     @DisplayName("Тест")

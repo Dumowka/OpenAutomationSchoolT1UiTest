@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import pages.HoversPage;
 
 @DisplayName("Страница Hovers")
-class HoversTest extends CommonTest {
+class HoversTest extends AbstractTest {
 
     @Test
     @DisplayName("Тест")

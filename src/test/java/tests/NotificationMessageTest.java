@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import pages.NotificationMessagePage;
 
 @DisplayName("Страница Notification Message")
-class NotificationMessageTest extends CommonTest {
+class NotificationMessageTest extends AbstractTest {
 
     @Test
     @DisplayName("Тест")

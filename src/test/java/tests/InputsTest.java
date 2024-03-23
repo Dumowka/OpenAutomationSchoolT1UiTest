@@ -8,7 +8,7 @@ import pages.InputsPage;
 import java.util.concurrent.ThreadLocalRandom;
 
 @DisplayName("Страница Inputs")
-class InputsTest extends CommonTest {
+class InputsTest extends AbstractTest {
 
     @Test
     @DisplayName("Тест")

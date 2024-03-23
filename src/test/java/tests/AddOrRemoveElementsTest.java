@@ -8,7 +8,7 @@ import pages.AddOrRemoveElementsPage;
 import java.util.stream.IntStream;
 
 @DisplayName("Страница Add/Remove Elements")
-class AddOrRemoveElementsTest extends CommonTest {
+class AddOrRemoveElementsTest extends AbstractTest {
 
     @Test
     @DisplayName("Тест")
