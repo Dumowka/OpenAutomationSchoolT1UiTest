@@ -1,0 +1,7 @@
+ext {
+    junitJupiterVersionApi = '5.10.2'
+    allureJunit5Version = '2.25.0'
+    selenideVersion = '7.2.1'
+    assertjCoreVersion = '3.22.0'
+    allureSelenideVersion = '2.25.0'
+}
