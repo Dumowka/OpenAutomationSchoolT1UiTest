@@ -20,7 +20,7 @@ class DisappearingElementsTest extends AbstractTest {
         DisappearingElementsPage disappearingElementsPage = mainPage.clickOnDisappearingElementsLink();
         int tries = 10;
         boolean isAllVisible = false;
-        for (int i = 0; i < tries; tries--) {
+        for (int i = 0; i < tries; i++) {
             if (disappearingElementsPage.checkThatAllLinksIsAppear()) {
                 isAllVisible = true;
                 break;

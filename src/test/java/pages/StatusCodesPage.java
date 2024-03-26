@@ -1,35 +1,37 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$x;
 
 public class StatusCodesPage extends AbstractPage {
 
-    private final String okStatusCodeLinkXpath = "//a[@href='status_codes/200']";
-    private final String movedPermanentlyStatusCodeLinkXpath = "//a[@href='status_codes/301']";
-    private final String notFoundStatusCodeLinkXpath = "//a[@href='status_codes/404']";
-    private final String internalServerErrorStatusCodeLinkXpath = "//a[@href='status_codes/500']";
+    private final SelenideElement okStatusCodeLink = $x("//a[@href='status_codes/200']");
+    private final SelenideElement movedPermanentlyStatusCodeLink = $x("//a[@href='status_codes/301']");
+    private final SelenideElement notFoundStatusCodeLink = $x("//a[@href='status_codes/404']");
+    private final SelenideElement internalServerErrorStatusCodeLink = $x("//a[@href='status_codes/500']");
 
     public StatusCodesPage() {
         super("Status Codes");
     }
 
     public StatusCodePage clickOnOkStatusCodeLink() {
-        $x(okStatusCodeLinkXpath).click();
+        okStatusCodeLink.click();
         return new StatusCodePage();
     }
 
     public StatusCodePage clickOnMovedPermanentlyStatusCodeLink() {
-        $x(movedPermanentlyStatusCodeLinkXpath).click();
+        movedPermanentlyStatusCodeLink.click();
         return new StatusCodePage();
     }
 
     public StatusCodePage clickOnNotFoundStatusCodeLink() {
-        $x(notFoundStatusCodeLinkXpath).click();
+        notFoundStatusCodeLink.click();
         return new StatusCodePage();
     }
 
     public StatusCodePage clickOnInternalServerErrorStatusCodeLink() {
-        $x(internalServerErrorStatusCodeLinkXpath).click();
+        internalServerErrorStatusCodeLink.click();
         return new StatusCodePage();
     }
 }

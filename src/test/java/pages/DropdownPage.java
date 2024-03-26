@@ -1,35 +1,36 @@
 package pages;
 
-import static com.codeborne.selenide.Condition.visible;
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$x;
 
 public class DropdownPage extends AbstractPage {
 
-    private final String dropdownSelectXpath = "//select[@id='dropdown']";
-    private final String firstOptionXpath = "//option[@value='1']";
-    private final String secondOptionXpath = "//option[@value='2']";
+    private final SelenideElement dropdownSelect = $x("//select[@id='dropdown']");
+    private final SelenideElement firstOption = $x("//option[@value='1']");
+    private final SelenideElement secondOption = $x("//option[@value='2']");
 
     public DropdownPage() {
         super("Dropdown List");
     }
 
     public DropdownPage clickOnDropdownSelect() {
-        $x(dropdownSelectXpath).click();
+        dropdownSelect.click();
         return this;
     }
 
     public DropdownPage printDropdownSelectText() {
-        System.out.println($x(dropdownSelectXpath).getText());
+        System.out.println(dropdownSelect.getText());
         return this;
     }
 
     public DropdownPage selectFirstOption() {
-        $x(firstOptionXpath).click();
+        firstOption.click();
         return this;
     }
 
     public DropdownPage selectSecondOption() {
-        $x(secondOptionXpath).click();
+        secondOption.click();
         return this;
     }
 

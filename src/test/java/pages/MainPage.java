@@ -1,59 +1,60 @@
 package pages;
 
-import static com.codeborne.selenide.Condition.visible;
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage extends AbstractPage {
-    private final String checkboxesLinkXpath = "//a[@href='/checkboxes']";
-    private final String dropdownLinkXpath = "//a[@href='/dropdown']";
-    private final String disappearingElementsLinkXpath = "//a[@href='/disappearing_elements']";
-    private final String inputsLinkXpath = "//a[@href='/inputs']";
-    private final String hoversLinkXpath = "//a[@href='/hovers']";
-    private final String notificationMessagesLinkXpath = "//a[@href='/notification_message']";
-    private final String addRemoveElementsLinkXpath = "//a[@href='/add_remove_elements/']";
-    private final String statusCodesLinkXpath = "//a[@href='/status_codes']";
+    private final SelenideElement checkboxesLink = $x("//a[@href='/checkboxes']");
+    private final SelenideElement dropdownLink = $x("//a[@href='/dropdown']");
+    private final SelenideElement disappearingElementsLink = $x("//a[@href='/disappearing_elements']");
+    private final SelenideElement inputsLink = $x("//a[@href='/inputs']");
+    private final SelenideElement hoversLink = $x("//a[@href='/hovers']");
+    private final SelenideElement notificationMessagesLink = $x("//a[@href='/notification_message']");
+    private final SelenideElement addRemoveElementsLink = $x("//a[@href='/add_remove_elements/']");
+    private final SelenideElement statusCodesLink = $x("//a[@href='/status_codes']");
 
     public MainPage() {
         super("Welcome to the-internet");
     }
 
     public CheckboxesPage clickOnCheckboxesLink() {
-        $x(checkboxesLinkXpath).click();
+        checkboxesLink.click();
         return new CheckboxesPage();
     }
 
     public DropdownPage clickOnDropdownLink() {
-        $x(dropdownLinkXpath).click();
+        dropdownLink.click();
         return new DropdownPage();
     }
 
     public DisappearingElementsPage clickOnDisappearingElementsLink() {
-        $x(disappearingElementsLinkXpath).click();
+        disappearingElementsLink.click();
         return new DisappearingElementsPage();
     }
 
     public InputsPage clickOnInputsLink() {
-        $x(inputsLinkXpath).click();
+        inputsLink.click();
         return new InputsPage();
     }
 
     public HoversPage clickOnHoversLink() {
-        $x(hoversLinkXpath).click();
+        hoversLink.click();
         return new HoversPage();
     }
 
     public NotificationMessagePage clickOnNotificationMessagesLink() {
-        $x(notificationMessagesLinkXpath).click();
+        notificationMessagesLink.click();
         return new NotificationMessagePage();
     }
 
     public AddOrRemoveElementsPage clickOnAddRemoveElementsLink() {
-        $x(addRemoveElementsLinkXpath).click();
+        addRemoveElementsLink.click();
         return new AddOrRemoveElementsPage();
     }
 
     public StatusCodesPage clickOnStatusCodesLink() {
-        $x(statusCodesLinkXpath).click();
+        statusCodesLink.click();
         return new StatusCodesPage();
     }
 }
