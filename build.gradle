@@ -23,6 +23,7 @@ dependencies {
     testImplementation "com.codeborne:selenide:${selenideVersion}"
     testImplementation "org.assertj:assertj-core:${assertjCoreVersion}"
     testImplementation "io.qameta.allure:allure-selenide:${allureSelenideVersion}"
+    testImplementation "org.modelmapper:modelmapper:${modelMapperVersion}"
 }
 
 test {

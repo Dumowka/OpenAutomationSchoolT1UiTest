@@ -10,7 +10,7 @@ public abstract class AbstractPage {
     private final SelenideElement title;
 
     public AbstractPage(String title) {
-        this.title = $x("//*[self::h3 or self::h1 and text()='%s']".formatted(title));
+        this.title = $x("//*[self::h3 or self::h1 and text()='%s']".formatted(title)).as("Заголовок страницы '%s'".formatted(title));
         waitForPageLoading();
     }
 

@@ -6,10 +6,10 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class StatusCodesPage extends AbstractPage {
 
-    private final SelenideElement okStatusCodeLink = $x("//a[@href='status_codes/200']");
-    private final SelenideElement movedPermanentlyStatusCodeLink = $x("//a[@href='status_codes/301']");
-    private final SelenideElement notFoundStatusCodeLink = $x("//a[@href='status_codes/404']");
-    private final SelenideElement internalServerErrorStatusCodeLink = $x("//a[@href='status_codes/500']");
+    private final SelenideElement okStatusCodeLink = $x("//a[@href='status_codes/200']").as("Ссылка на страницу статус кода 200");
+    private final SelenideElement movedPermanentlyStatusCodeLink = $x("//a[@href='status_codes/301']").as("Ссылка на страницу статус кода 301");
+    private final SelenideElement notFoundStatusCodeLink = $x("//a[@href='status_codes/404']").as("Ссылка на страницу статус кода 404");
+    private final SelenideElement internalServerErrorStatusCodeLink = $x("//a[@href='status_codes/500']").as("Ссылка на страницу статус кода 500");
 
     public StatusCodesPage() {
         super("Status Codes");

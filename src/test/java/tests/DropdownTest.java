@@ -22,8 +22,11 @@ class DropdownTest extends AbstractTest {
         dropdownPage
                 .clickOnDropdownSelect()
                 .selectFirstOption()
+                .checkFirstOptionSelectedStatus(true)
                 .printDropdownSelectText()
                 .selectSecondOption()
+                .checkFirstOptionSelectedStatus(false)
+                .checkSecondOptionSelectedStatus(true)
                 .printDropdownSelectText();
     }
 }

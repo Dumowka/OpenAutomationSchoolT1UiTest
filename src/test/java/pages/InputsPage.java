@@ -6,19 +6,23 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class InputsPage extends AbstractPage {
 
-    private final SelenideElement numberInput = $x("//input[@type='number']");
+    private final SelenideElement numberInput = $x("//input[@type='number']").as("Поле ввода");
 
     public InputsPage() {
         super("Inputs");
     }
 
-    public InputsPage setValueInNumberInput(double value) {
-        numberInput.sendKeys(String.valueOf(value));
+    public InputsPage setValueInNumberInput(String value) {
+        numberInput.sendKeys(value);
         return this;
     }
 
-    public InputsPage printValueFromNumberInput() {
-        System.out.println(numberInput.getValue());
+    public InputsPage clearNumberInput() {
+        numberInput.clear();
         return this;
+    }
+
+    public String getNumberInputValue() {
+        return numberInput.getValue();
     }
 }

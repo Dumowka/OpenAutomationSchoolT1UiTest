@@ -26,10 +26,26 @@ class StatusCodesTest extends AbstractTest {
 
     private Stream<Arguments> statusCodesParams() {
         return Stream.of(
-                Arguments.of("200", (Supplier<StatusCodePage>) statusCodesPage::clickOnOkStatusCodeLink),
-                Arguments.of("301", (Supplier<StatusCodePage>) statusCodesPage::clickOnMovedPermanentlyStatusCodeLink),
-                Arguments.of("404", (Supplier<StatusCodePage>) statusCodesPage::clickOnNotFoundStatusCodeLink),
-                Arguments.of("500", (Supplier<StatusCodePage>) statusCodesPage::clickOnInternalServerErrorStatusCodeLink)
+                Arguments.of(
+                        "200",
+                        (Supplier<StatusCodePage>) statusCodesPage::clickOnOkStatusCodeLink,
+                        "This page returned a 200 status code."
+                ),
+                Arguments.of(
+                        "301",
+                        (Supplier<StatusCodePage>) statusCodesPage::clickOnMovedPermanentlyStatusCodeLink,
+                        "This page returned a 301 status code."
+                ),
+                Arguments.of(
+                        "404",
+                        (Supplier<StatusCodePage>) statusCodesPage::clickOnNotFoundStatusCodeLink,
+                        "This page returned a 404 status code."
+                ),
+                Arguments.of(
+                        "500",
+                        (Supplier<StatusCodePage>) statusCodesPage::clickOnInternalServerErrorStatusCodeLink,
+                        "This page returned a 500 status code."
+                )
         );
     }
 
@@ -41,8 +57,8 @@ class StatusCodesTest extends AbstractTest {
             Кликнуть на каждый статус в новом тестовом методе,
             вывести на экран текст после перехода на страницу статуса.
             """)
-    void statusCodesTest(String name, Supplier<StatusCodePage> method) {
-        method.get().printTextFromPage();
+    void statusCodesTest(String name, Supplier<StatusCodePage> method, String expectedTextOnPage) {
+        method.get().checkThatCorrectPageIsOpened(expectedTextOnPage).printTextFromPage();
         back();
     }
 }

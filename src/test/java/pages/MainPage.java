@@ -5,14 +5,14 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage extends AbstractPage {
-    private final SelenideElement checkboxesLink = $x("//a[@href='/checkboxes']");
-    private final SelenideElement dropdownLink = $x("//a[@href='/dropdown']");
-    private final SelenideElement disappearingElementsLink = $x("//a[@href='/disappearing_elements']");
-    private final SelenideElement inputsLink = $x("//a[@href='/inputs']");
-    private final SelenideElement hoversLink = $x("//a[@href='/hovers']");
-    private final SelenideElement notificationMessagesLink = $x("//a[@href='/notification_message']");
-    private final SelenideElement addRemoveElementsLink = $x("//a[@href='/add_remove_elements/']");
-    private final SelenideElement statusCodesLink = $x("//a[@href='/status_codes']");
+    private final SelenideElement checkboxesLink = $x("//a[@href='/checkboxes']").as("Ссылка на страницу 'Checkboxes'");
+    private final SelenideElement dropdownLink = $x("//a[@href='/dropdown']").as("Ссылка на страницу 'Dropdown'");
+    private final SelenideElement disappearingElementsLink = $x("//a[@href='/disappearing_elements']").as("Ссылка на страницу 'Disappearing Elements'");
+    private final SelenideElement inputsLink = $x("//a[@href='/inputs']").as("Ссылка на страницу 'Inputs'");
+    private final SelenideElement hoversLink = $x("//a[@href='/hovers']").as("Ссылка на страницу 'Hovers'");
+    private final SelenideElement notificationMessagesLink = $x("//a[@href='/notification_message']").as("Ссылка на страницу 'Notification Message'");
+    private final SelenideElement addRemoveElementsLink = $x("//a[@href='/add_remove_elements/']").as("Ссылка на страницу 'Add/Remove Elements'");
+    private final SelenideElement statusCodesLink = $x("//a[@href='/status_codes']").as("Ссылка на страницу 'Status Codes'");
 
     public MainPage() {
         super("Welcome to the-internet");

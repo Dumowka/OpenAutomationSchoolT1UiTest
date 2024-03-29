@@ -3,37 +3,34 @@ package pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import java.util.concurrent.ThreadLocalRandom;
-
-import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class AddOrRemoveElementsPage extends AbstractPage {
 
-    private final SelenideElement addElementButton = $x("//button[@onclick='addElement()']");
-    private final ElementsCollection addedElementButtons = $$x("//button[@onclick='deleteElement()']");
+    private final SelenideElement addElementButton = $x("//button[@onclick='addElement()']").as("Добавить (кнопка)");
+    private final ElementsCollection addedElementButtons = $$x("//button[@onclick='deleteElement()']").as("Добавленный элемент (кнопка)");
 
     public AddOrRemoveElementsPage() {
         super("Add/Remove Elements");
     }
 
     public AddOrRemoveElementsPage clickOnAddElementButton() {
-        int elementsCountBefore = addedElementButtons.size();
         addElementButton.click();
-        return waitForAddedElementAppear(elementsCountBefore);
-    }
-
-    public AddOrRemoveElementsPage printAddedElementText() {
-        System.out.println(addedElementButtons.last().getText());
         return this;
     }
 
-    public AddOrRemoveElementsPage clickOnRandomAddedElement() {
-        int elementsCountBefore = addedElementButtons.size();
-        int index = ThreadLocalRandom.current().nextInt(elementsCountBefore);
-        addedElementButtons.get(index).click();
-        return waitForAddedElementDisappear(elementsCountBefore);
+    public int getAddedElementsCount() {
+        return addedElementButtons.size();
+    }
+
+    public AddOrRemoveElementsPage clickOnLastAddedElement() {
+        if (addedElementButtons.size() != 0) {
+            addedElementButtons.last().click();
+        } else {
+            System.out.println("Элементов больше нет");
+        }
+        return this;
     }
 
     public AddOrRemoveElementsPage printAddedElementsCount() {
@@ -43,16 +40,6 @@ public class AddOrRemoveElementsPage extends AbstractPage {
 
     public AddOrRemoveElementsPage printTextFromAllAddedElements() {
         addedElementButtons.asDynamicIterable().forEach(element -> System.out.println(element.getText()));
-        return this;
-    }
-
-    private AddOrRemoveElementsPage waitForAddedElementAppear(int elementsCountBefore) {
-        addedElementButtons.shouldBe(size(elementsCountBefore + 1));
-        return this;
-    }
-
-    private AddOrRemoveElementsPage waitForAddedElementDisappear(int elementsCountBefore) {
-        addedElementButtons.shouldBe(size(elementsCountBefore - 1));
         return this;
     }
 }
