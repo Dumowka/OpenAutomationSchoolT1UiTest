@@ -13,6 +13,10 @@ public class MainPage extends AbstractPage {
     private final SelenideElement notificationMessagesLink = $x("//a[@href='/notification_message']").as("Ссылка на страницу 'Notification Message'");
     private final SelenideElement addRemoveElementsLink = $x("//a[@href='/add_remove_elements/']").as("Ссылка на страницу 'Add/Remove Elements'");
     private final SelenideElement statusCodesLink = $x("//a[@href='/status_codes']").as("Ссылка на страницу 'Status Codes'");
+    private final SelenideElement dragAndDropLink = $x("//a[@href='/drag_and_drop']").as("Ссылка на страницу 'Drag And Drop'");
+    private final SelenideElement contextMenuLink = $x("//a[@href='/context_menu']").as("Ссылка на страницу 'Context Menu'");
+    private final SelenideElement infiniteScrollLink = $x("//a[@href='/infinite_scroll']").as("Ссылка на страницу 'Infinite Scroll'");
+    private final SelenideElement keyPressesLink = $x("//a[@href='/key_presses']").as("Ссылка на страницу 'Key Presses'");
 
     public MainPage() {
         super("Welcome to the-internet");
@@ -56,5 +60,25 @@ public class MainPage extends AbstractPage {
     public StatusCodesPage clickOnStatusCodesLink() {
         statusCodesLink.click();
         return new StatusCodesPage();
+    }
+
+    public DragAndDropPage clickOnDragAndDropLink() {
+        dragAndDropLink.click();
+        return new DragAndDropPage();
+    }
+
+    public ContextMenuPage clickOnContextMenuLink() {
+        contextMenuLink.click();
+        return new ContextMenuPage();
+    }
+
+    public InfiniteScrollPage clickOnInfiniteScrollLink() {
+        infiniteScrollLink.click();
+        return new InfiniteScrollPage();
+    }
+
+    public KeyPressesPage clickOnKeyPressesLink() {
+        keyPressesLink.click();
+        return new KeyPressesPage();
     }
 }
