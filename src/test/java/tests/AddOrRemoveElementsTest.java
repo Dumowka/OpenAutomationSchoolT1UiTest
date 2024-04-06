@@ -60,19 +60,4 @@ class AddOrRemoveElementsTest extends AbstractTest {
                 }
         )).collect(Collectors.toList());
     }
-
-//    @Test
-//    @DisplayName("Тест")
-//    @Description("""
-//            Перейти на страницу Add/Remove Elements.
-//            Нажать на кнопку Add Element 5 раз.
-//            С каждым нажатием выводить в консоль текст появившегося элемента.
-//            Нажать на разные кнопки Delete три раза.
-//            Выводить в консоль оставшееся количество кнопок Delete и их тексты.
-//            """)
-//    void addOrRemoveElementsTest2() {
-//        IntStream.range(0, 5).forEach(i -> addOrRemoveElementsPage.clickOnAddElementButton().printAddedElementText());
-//        IntStream.range(0, 3).forEach(i -> addOrRemoveElementsPage.clickOnRandomAddedElement());
-//        addOrRemoveElementsPage.printAddedElementsCount().printTextFromAllAddedElements();
-//    }
 }

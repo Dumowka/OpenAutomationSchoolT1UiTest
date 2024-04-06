@@ -21,6 +21,7 @@ public class ConfigProperties {
     static {
         try {
             properties.load(new FileReader("config.properties"));
+            properties.load(new FileReader("local.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }

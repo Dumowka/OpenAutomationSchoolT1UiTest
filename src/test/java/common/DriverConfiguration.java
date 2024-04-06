@@ -5,6 +5,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import io.qameta.allure.selenide.LogType;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
@@ -20,6 +22,16 @@ public class DriverConfiguration {
         capabilities.addArguments("start-maximized");
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = null;
+
+        if (Boolean.parseBoolean(config.getConfigParameter("IS_CI_RUN"))) {
+            Configuration.remote = config.getConfigParameter("REMOTE_UTL");
+            Map<String, Object> selenoidOptions = new HashMap<>();
+            selenoidOptions.put("enableVNC", true);
+            selenoidOptions.put("enableVideo", true);
+            selenoidOptions.put("enableLog", true);
+            selenoidOptions.put("sessionTimeout", "15m");
+            Configuration.browserCapabilities.setCapability("selenoid:options", selenoidOptions);
+        }
 
         addListener(
                 "AllureSelenide",
