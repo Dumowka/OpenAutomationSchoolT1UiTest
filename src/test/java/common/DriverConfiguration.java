@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.logging.Level;
 
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
+import static tests.AbstractTest.IS_CI_RUN;
 
 
 public class DriverConfiguration {
@@ -23,7 +24,7 @@ public class DriverConfiguration {
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = null;
 
-        if (Boolean.parseBoolean(config.getConfigParameter("IS_CI_RUN"))) {
+        if (IS_CI_RUN) {
             Configuration.remote = config.getConfigParameter("REMOTE_UTL");
             Map<String, Object> selenoidOptions = new HashMap<>();
             selenoidOptions.put("enableVNC", true);

@@ -1,5 +1,6 @@
 package common;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -21,7 +22,13 @@ public class ConfigProperties {
     static {
         try {
             properties.load(new FileReader("config.properties"));
-            properties.load(new FileReader("local.properties"));
+            File localConfig = new File("local.properties");
+            if (localConfig.exists()) {
+                properties.load(new FileReader(localConfig));
+            }
+
+            System.getenv().forEach(properties::setProperty);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
