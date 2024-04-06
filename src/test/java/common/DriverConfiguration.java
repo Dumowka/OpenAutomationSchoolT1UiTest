@@ -28,7 +28,7 @@ public class DriverConfiguration {
             Configuration.remote = config.getConfigParameter("REMOTE_UTL");
             Map<String, Object> selenoidOptions = new HashMap<>();
             selenoidOptions.put("enableVNC", true);
-            selenoidOptions.put("enableVideo", true);
+//            selenoidOptions.put("enableVideo", true);
             selenoidOptions.put("enableLog", true);
             selenoidOptions.put("sessionTimeout", "15m");
             Configuration.browserCapabilities.setCapability("selenoid:options", selenoidOptions);
